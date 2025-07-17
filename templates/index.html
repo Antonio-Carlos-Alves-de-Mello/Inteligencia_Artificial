@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Fazer Pergunta</title>
+</head>
+<body>
+    <h1>Faça sua pergunta</h1>
+    <form method="post">
+        <label for="pergunta">Pergunta:</label><br>
+        <textarea name="pergunta" id="pergunta" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="modelo">Modelo:</label>
+        <select name="modelo" id="modelo" required>
+             <option value="gemini-pro">Gemini</option>
+            <option value="gpt-3.5-turbo">OpenAI (gpt-3.5-turbo)</option>
+            <option value="deepseek-chat">DeepSeek</option>
+           
+        </select><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    {% if resposta %}
+        <h2>Resposta:</h2>
+        <div>{{ resposta|safe }}</div>
+    {% endif %}
+</body>
+</html>
